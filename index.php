@@ -25,3 +25,16 @@
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
  </form>
+ 
+ <?php
+    
+    // PHP Data Objects(PDO) Sample Code:
+	try {
+    	$conn = new PDO("sqlsrv:server = ermawebsub1.database.windows.net; Database = ermawebsub1", "erma", "Zha3254sub1");
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch (PDOException $e) {
+    	print("Error connecting to SQL Server.");
+    	die(print_r($e));
+	}
+?>
