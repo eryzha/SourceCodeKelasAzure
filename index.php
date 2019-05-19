@@ -29,7 +29,7 @@
 	
 	$host = "ermawebsub1.database.windows.net";
     $user = "erma";
-    $pass = "Zha3254sub1";
+    $pass = "Er3254sub1";
     $db = "ermawebsub1";
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
