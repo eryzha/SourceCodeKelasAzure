@@ -29,10 +29,10 @@
 	
 	$host = "ermawebsub1.database.windows.net";
     $user = "erma";
-    $pass = "Er3254sub1";
+    $pass = "Zha3254sub1";
     $db = "ermawebsub1";
     try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn = new PDO("mysql:server = $host; Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(Exception $e) {
         echo "Failed: " . $e;
