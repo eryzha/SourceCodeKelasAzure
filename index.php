@@ -29,7 +29,10 @@
     try
 {
 	//$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
-	$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my');
+	$options = array(
+	PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
+);
+	$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my',$options);
 
  
 }
