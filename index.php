@@ -26,8 +26,10 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
+ /*
     try
 {
+    */
 	//$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
     /*
 	$options = array(
