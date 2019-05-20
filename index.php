@@ -29,8 +29,9 @@
     try
 {
 	//$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
+    
 	$options = array(
-	PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
+	PDO::MYSQL_ATTR_SSL_CA => 'Downloads/BaltimoreCyberTrustRoot.crt.pem'
 );
 	$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my',$options);
 
@@ -42,7 +43,9 @@ catch (PDOException $e)
     exit();
 }
 echo 'Connected to MySQL';
-
+/*
+$conn=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, '/var/www/html/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL); mysqli_real_connect($con, "ermamysqldb.mysql.database.azure.com", "erma@ermamysqldb", "Zha3254my", "ermamysqldb", 3306);
+*/
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['name'];
