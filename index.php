@@ -26,27 +26,25 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
- /*
-    try
-{
-    */
-	//$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
-    /*
-	$options = array(
-	PDO::MYSQL_ATTR_SSL_CA => 'Downloads/BaltimoreCyberTrustRoot.crt.pem'
-);
-	$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my',$options);
-
  
-}
-catch (PDOException $e)
-{
-    echo 'Error: ' . $e->getMessage();
-    exit();
-}
-echo 'Connected to MySQL';
-*/
-$conn=mysqli_init(); mysqli_ssl_set($conn, NULL, NULL, 'Download/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL); mysqli_real_connect($conn, "ermamysqldb.mysql.database.azure.com", "erma@ermamysqldb", "Zha3254my", "ermamysqldb", 3306);
+    try
+    {
+    
+	   //$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
+    
+	   $options = array(PDO::MYSQL_ATTR_SSL_CA => 'Downloads/BaltimoreCyberTrustRoot.crt.pem');
+	   $conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my', $options);
+    }
+    catch (PDOException $e)
+    {
+        echo 'Error: ' . $e->getMessage();
+        exit();
+    }
+    echo 'Connected to MySQL';
+
+    /*
+    $conn=mysqli_init(); mysqli_ssl_set($conn, NULL, NULL, 'Download/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL); mysqli_real_connect($conn, "ermamysqldb.mysql.database.azure.com", "erma@ermamysqldb", "Zha3254my", "ermamysqldb", 3306);
+    */
 
     if (isset($_POST['submit'])) {
         try {
