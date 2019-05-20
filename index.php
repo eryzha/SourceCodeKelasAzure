@@ -32,7 +32,7 @@
     
 	   //$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
     
-	   $options = array(PDO::MYSQL_ATTR_SSL_CA => 'Downloads/BaltimoreCyberTrustRoot.crt.pem');
+	   $options = array(PDO::MYSQL_ATTR_SSL_CA => '/Users/ermasusanti/Downloads/BaltimoreCyberTrustRoot.crt.pem');
 	   $conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my', $options);
     }
     catch (PDOException $e)
@@ -55,7 +55,7 @@
             // Insert data
             $sql_insert = "INSERT INTO Registration (name, email, job, date) 
                         VALUES (?,?,?,?)";
-            $stmt = $conn->prepare($sql_insert);
+            $stmt = $conn->query($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
