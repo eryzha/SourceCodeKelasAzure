@@ -26,17 +26,19 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-	
-	$host = "ermawebsub1.database.windows.net";
-    $user = "erma";
-    $pass = "Zha3254sub1";
-    $db = "ermawebsub1";
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+    try
+{
+	//$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
+	$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my');
+
+ 
+}
+catch (PDOException $e)
+{
+    echo 'Error: ' . $e->getMessage();
+    exit();
+}
+echo 'Connected to MySQL';
 
     if (isset($_POST['submit'])) {
         try {
