@@ -31,9 +31,12 @@
     {
     
 	   //$conn = new PDO('mysql:host=localhost;dbname=testazure', 'root', '');
-    
+        /*
 	   $options = array(PDO::MYSQL_ATTR_SSL_CA => '/Users/ermasusanti/Downloads/BaltimoreCyberTrustRoot.crt.pem');
 	   $conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my', $options);
+       */
+
+$conn = new PDO('mysql:host=ermamysqldb.mysql.database.azure.com;port=3306;dbname=ermamysqldb', 'erma@ermamysqldb', 'Zha3254my');
     }
     catch (PDOException $e)
     {
