@@ -162,7 +162,7 @@ if(isset($_FILES['image'])){
     $createContainerOptions->addMetaData("key1", "value1");
     $createContainerOptions->addMetaData("key2", "value2");
 
-      $containerName = "quickstartblobs".generateRandomString();
+      $containerName = "ermacontainer".generateRandomString();
 
     try {
         // Create container.
